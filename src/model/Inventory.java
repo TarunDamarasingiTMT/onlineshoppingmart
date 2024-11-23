@@ -1,4 +1,4 @@
-package inventory;
+package model;
 
 public class Inventory {
 
@@ -8,9 +8,16 @@ public class Inventory {
     private int stock;
 
 
-
     //Getters and Setters
 
+
+    //constructor
+    public Inventory(int itemId, String name, float price, int stock) {
+        this.itemId = itemId;
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+    }
 
     public int getItemId() {
         return itemId;
@@ -41,14 +48,6 @@ public class Inventory {
     }
 
     public void setStock(int stock) {
-        this.stock = stock;
-    }
-
-    //constructor
-    public Inventory(int itemId, String name, float price, int stock) {
-        this.itemId = itemId;
-        this.name = name;
-        this.price = price;
         this.stock = stock;
     }
 

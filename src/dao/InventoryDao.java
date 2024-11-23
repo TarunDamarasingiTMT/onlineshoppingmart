@@ -1,8 +1,8 @@
-package inventory;
+package dao;
 
-import java.sql.SQLException;
+import model.Inventory;
 
-public interface InventoryInterface {
+public interface InventoryDao {
 
     Inventory getItemById(int itemId);
 

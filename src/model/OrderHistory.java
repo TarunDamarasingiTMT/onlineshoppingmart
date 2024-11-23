@@ -1,5 +1,6 @@
-package orderhistory;
+package model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class OrderHistory {
@@ -8,6 +9,12 @@ public class OrderHistory {
     private float totalAmount;
     private LocalDateTime timestamp;
 
+
+    public OrderHistory(int orderId, float totalAmount, LocalDate timestamp) {
+        this.orderId = orderId;
+        this.totalAmount = totalAmount;
+        this.timestamp = timestamp.atStartOfDay();
+    }
 
     public int getOrderId() {
         return orderId;

@@ -1,4 +1,5 @@
-package cart;
+package model;
+
 import java.time.LocalDateTime;
 
 public class Cart {
@@ -7,6 +8,14 @@ public class Cart {
     private int quantity;
     private int userId;
     private LocalDateTime lastUpdated;
+
+    public Cart(int cartId, int itemId, int quantity, int userId, LocalDateTime lastUpdated) {
+        this.cartId = cartId;
+        this.itemId = itemId;
+        this.quantity = quantity;
+        this.userId = userId;
+        this.lastUpdated = lastUpdated;
+    }
 
     //Getters and Setters
     public int getCartId() {
@@ -45,18 +54,9 @@ public class Cart {
         return lastUpdated;
     }
 
-    public void setLastUpdated(LocalDateTime lastUpdated) {
-        this.lastUpdated = lastUpdated;
-    }
-
     //constructor
 
-
-    public Cart(int cartId, int itemId, int quantity, int userId, LocalDateTime lastUpdated) {
-        this.cartId = cartId;
-        this.itemId = itemId;
-        this.quantity = quantity;
-        this.userId = userId;
+    public void setLastUpdated(LocalDateTime lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
 

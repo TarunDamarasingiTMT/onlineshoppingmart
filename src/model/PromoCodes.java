@@ -1,4 +1,4 @@
-package promocodes;
+package model;
 
 import java.util.Date;
 

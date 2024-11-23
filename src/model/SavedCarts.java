@@ -1,4 +1,4 @@
-package savedcarts;
+package model;
 
 import java.time.LocalDate;
 
@@ -10,6 +10,14 @@ public class SavedCarts {
     private int quantity;
     private LocalDate savedAt;
 
+
+    public SavedCarts(int savedCardId, int userId, int itemId, int quantity, LocalDate savedAt) {
+        this.savedCardId = savedCardId;
+        this.userId = userId;
+        this.itemId = itemId;
+        this.quantity = quantity;
+        this.savedAt = savedAt;
+    }
 
     public int getSavedCardId() {
         return savedCardId;
@@ -48,14 +56,6 @@ public class SavedCarts {
     }
 
     public void setSavedAt(LocalDate savedAt) {
-        this.savedAt = savedAt;
-    }
-
-    public SavedCarts(int savedCardId, int userId, int itemId, int quantity, LocalDate savedAt) {
-        this.savedCardId = savedCardId;
-        this.userId = userId;
-        this.itemId = itemId;
-        this.quantity = quantity;
         this.savedAt = savedAt;
     }
 
