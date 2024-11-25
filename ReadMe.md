@@ -1,55 +1,57 @@
-Online Shopping cart System
+Online Shopping Cart System
 
-A Featured Model of Online Shopping cart similar to daily life based apps.
+Overview
+This document is a model of an online shopping cart system, similar to everyday applications. 
+The design implements the DAO (Data Access Object) pattern and the Service Layer pattern, 
+applying OOP (Object-Oriented Programming) principles and coding standards.
 
-While designing, we implement DAO Pattern & Service layer pattern with applying oops principles & coding standards.
+Features
+1. Adding Items to Cart
+   Input: userId, itemId, quantity
+   Validations:
+   If the entered itemId is invalid or not available, the output will be null.
+   If the requested quantity exceeds available stock, an error message stating "Sufficient stock is not available" will be returned.
+   Functionality:
+   Upon successful addition, the itemId, quantity, and userId will be stored in the Cart table.
 
+2. Removing Items from Cart
+   Input: userId, itemId, quantity
+   Validations:
+   If the entered userId / itemId is invalid or not available, the output will be null.
+   Functionality:
+   After entering the itemId, quantity, and userId, the specified items will be removed from the Cart table.
 
-features :- 
+3. Viewing the Cart
+   Input: userId
+   Functionality:
+   If a valid userId is entered, the system will display the cart contents for that user in the following format:
+   itemId | name | quantity | price | subtotal
+   The total cost of all items will also be displayed.
+   If an invalid userId is entered, the system will return an error message indicating null.
 
-Adding items to Cart
-input (main) - itemId, quantity
+4. Applying Coupon Codes
+   Input: UserId, promoCode
+   Validations:
+   if we entered wrong userId or entered promo code is invalid, an error message stating "Invalid user Id" / """Invalid promo code" will be returned.
+   Functionality:
+   If valid, the coupon will be applied to the total cart cost, providing a discount.
 
-validations : - 
-if entered itemId is wrong/not available then it throws error as null
-if we entered more quantity then stock, then it throws out with message sufficient stock is not avaiable
+5. Checkout Process
+   Input: userId
+   Functionality:
+   During checkout, items in the cart will be processed. Users can apply a promo code based on their preference.
+   The total cost of the items in the cart will be calculated, and the cart will be cleared.
+   All relevant data will be stored in the Order History table.
 
-functionality:-
+6. Order History
+   Input: userId
+   Functionality:
+   After checkout, the cart will be empty, and the order details will be stored in the order history.
+   Users can retrieve their order history by entering their userId. 
 
-after adding itemid, quantity, userid the data will store in Cart table
-
-Remove Items from Cart 
-
-validations : -
-if entered itemId is wrong/not available then it throws error as null
-functionality:-
-
-after entering itemId, quantity, userid then from data will we can remove items in Cart table
-
-View the Cart
-
-if we enter userId, then Data of Cart of that user will be shown as 
-item Id | name | quantity | price | subtotal 
-along with that, total items cost will be displayed as total cost.
-if we entered wrong id, then we will get error message as null
-
-Apply the CouponCode
-
-we have some coupon codes in database,based on that we will get discount.
-if we entered wrong input as promo code, we will get error message as invalid promo code
-
-CheckOut of Cart
-In checkout process we have to enter userId, then the items of cart presented cart were goes under checkout process, again there will be promo code applied based on user interest
-later, we will get total cost of items in cart & cart will cleared, later data posted to order history.
-(clearing the Items in cart)
-
-Order History  
-
-after completion of checkout, the cart will be empty & the data will stored in order history table 
-we can retrive the Order history of user by entering userId
-
-unsaved items - SavedCart
-before exit the system, it will ask are you want to save the items in saved cart if yes, the items will save into saved cart & exit,if we enter no it will exit the program immediately.
-
-
-
+7. Unsaved Items - Saved Cart
+   Functionality:
+   Before exiting the system, users will be prompted with the question: "Do you want to save the items in your saved cart?"
+   If the user responds with "yes," the items will be saved in the saved cart.
+   If the user responds with "no," the program will exit immediately.
+   If the user enters other than yes/no, the system will return an error message indicating null.
