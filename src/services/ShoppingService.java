@@ -107,8 +107,7 @@ public class ShoppingService {
             // Export cart items to the order items table
             cartDAO.exportToOrderItems(userId, orderId);
             cartDAO.clearCart(userId);
-
-            System.out.println("Checkout successful! Your Cart Cleared Successfully.");
+            System.out.println("Checkout successful! Your Cart cleared successfully. User ID: " + userId);
             System.out.println("Total Cost of Cart: $" + cartTotal);
             System.out.println("Delivery Date: " + java.time.LocalDate.now().plusDays(3));
             connection.commit(); // Commit the transaction

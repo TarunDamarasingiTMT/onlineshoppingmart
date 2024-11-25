@@ -38,8 +38,8 @@ public class CartDaoImpl implements CartDao {
                 ps.setInt(3, quantity);
                 ps.setDate(4, Date.valueOf(LocalDate.now()));
                 ps.executeUpdate();
-                // Log once after successful addition
-                logger.info("Item added to cart. User ID: " + userId + ", Item ID: " + itemId + ", Quantity: " + quantity);
+                // print once after successful addition
+                System.out.println("Item added to cart. User ID: " + userId + ", Item ID: " + itemId + ", Quantity: " + quantity);
             } catch (SQLException e) {
                 logger.severe("Error adding item to cart. User ID: " + userId + ", Item ID: " + itemId + ", Exception: " + e.getMessage());
                 throw new SQLException(e);
@@ -64,7 +64,7 @@ public class CartDaoImpl implements CartDao {
                 logger.warning("Error: Item not found or insufficient quantity in cart. User ID: " + userId + ", Item ID: " + itemId);
             } else {
                 // Log once after successful removal
-                logger.info("Item removed from cart. User ID: " + userId + ", Item ID: " + itemId + ", Quantity Removed: " + quantity);
+                System.out.println("Item removed from cart. User ID: " + userId + ", Item ID: " + itemId + ", Quantity Removed: " + quantity);
             }
         } catch (SQLException e) {
             logger.severe("Error removing item from cart. User ID: " + userId + ", Item ID: " + itemId + ", Exception: " + e.getMessage());
@@ -100,9 +100,8 @@ public class CartDaoImpl implements CartDao {
                             " - Price: $" + item.getPrice() + " - Subtotal: $" + subtotal);
                 });
                 System.out.println("Total cost of cart: $" + total);
+                System.out.println("User viewed cart. User ID: " + userId + ", Total Cart Value: $" + total);
 
-                // Log once after cart is viewed, avoid duplicate logging
-                logger.info("User viewed cart. User ID: " + userId + ", Total Cart Value: $" + total);
             }
         } catch (SQLException e) {
             logger.severe("Error viewing cart. User ID: " + userId + ", Exception: " + e.getMessage());
@@ -121,7 +120,7 @@ public class CartDaoImpl implements CartDao {
                 if (rs.next()) {
                     float totalAmount = rs.getFloat("total_amount");
                     // Log once when total is fetched
-                    logger.info("Fetched total cart value. User ID: " + userId + ", Total Amount: $" + totalAmount);
+                    System.out.println("Fetched total cart value. User ID: " + userId + ", Total Amount: $" + totalAmount);
                     return totalAmount;
                 }
             }
@@ -173,8 +172,6 @@ public class CartDaoImpl implements CartDao {
         try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, userId);
             ps.executeUpdate();
-            // Log once after cart is cleared
-            logger.info("Cart cleared successfully. User ID: " + userId);
         } catch (SQLException e) {
             logger.severe("Error clearing cart. User ID: " + userId + ", Exception: " + e.getMessage());
             throw new SQLException(e);
