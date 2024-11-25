@@ -10,7 +10,7 @@ public class OnlineShopping {
             ShoppingService shoppingService = new ShoppingService(connection);
 
             System.out.println("Welcome to Online Shopping, Select your Choice");
-            String promoCodeInput = null;
+
 
             while (true) {
                 System.out.println("1. Add item to the Cart");
@@ -25,7 +25,7 @@ public class OnlineShopping {
                 int userId;
                 int itemId;
                 int quantity;
-
+                String promoCodeInput = null;
                 switch (choice) {
                     case 1: // Add Item to the Cart
                         System.out.println("Enter your userId:");

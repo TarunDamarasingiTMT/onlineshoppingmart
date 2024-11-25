@@ -55,13 +55,11 @@ public class OrderHistoryDaoImpl implements OrderHistoryDao {
 
                 if (orderHistoryList.isEmpty()) {
                     logger.info("No orders found for User ID: " + userId);
-                    System.out.println("No orders found for userId: " + userId);
+                    //System.out.println("No orders found for userId: " + userId);
                     return;
                 }
 
-                logger.info("Fetched order history for User ID: " + userId);
-
-                // Using Streams to print the order history in a structured way
+                // Using Streams to print the order history
                 System.out.println("Order History for User ID: " + userId);
                 orderHistoryList.stream().forEach(order -> {
                     System.out.println("Order ID: " + order.getOrderId());

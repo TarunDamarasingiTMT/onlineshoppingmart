@@ -174,7 +174,7 @@ public class CartDaoImpl implements CartDao {
             ps.setInt(1, userId);
             ps.executeUpdate();
             // Log once after cart is cleared
-            logger.info("Cart cleared successfully. User ID: " + userId);
+            System.out.println("Cart cleared successfully. User ID: " + userId);
         } catch (SQLException e) {
             logger.severe("Error clearing cart. User ID: " + userId + ", Exception: " + e.getMessage());
             throw new SQLException(e);
