@@ -7,7 +7,7 @@ applying OOP (Object-Oriented Programming) principles and coding standards.
 
 Features
 1. Adding Items to Cart
-   Input: userId, itemId, quantity
+   Input: userId, itemId, quantity.
    Validations:
    If the entered itemId is invalid or not available, the output will be null.
    If the requested quantity exceeds available stock, an error message stating "Sufficient stock is not available" will be returned.
@@ -15,14 +15,14 @@ Features
    Upon successful addition, the itemId, quantity, and userId will be stored in the Cart table.
 
 2. Removing Items from Cart
-   Input: userId, itemId, quantity
+   Input: userId, itemId, quantity.
    Validations:
    If the entered userId / itemId is invalid or not available, the output will be null.
    Functionality:
    After entering the itemId, quantity, and userId, the specified items will be removed from the Cart table.
 
 3. Viewing the Cart
-   Input: userId
+   Input: userId.
    Functionality:
    If a valid userId is entered, the system will display the cart contents for that user in the following format:
    itemId | name | quantity | price | subtotal
@@ -30,21 +30,21 @@ Features
    If an invalid userId is entered, the system will return an error message indicating null.
 
 4. Applying Coupon Codes
-   Input: UserId, promoCode
+   Input: UserId, promoCode.
    Validations:
    if we entered wrong userId or entered promo code is invalid, an error message stating "Invalid user Id" / "Invalid promo code" will be returned.
    Functionality:
    If valid, the coupon will be applied to the total cart cost, providing a discount.
 
 5. Checkout Process
-   Input: userId
+   Input: userId.
    Functionality:
    During checkout, items in the cart will be processed. Users can apply a promo code based on their preference.
    The total cost of the items in the cart will be calculated, and the cart will be cleared.
    All relevant data will be stored in the Order History table.
 
 6. Order History
-   Input: userId
+   Input: userId.
    Functionality:
    After checkout, the cart will be empty, and the order details will be stored in the order history.
    Users can retrieve their order history by entering their userId. 
