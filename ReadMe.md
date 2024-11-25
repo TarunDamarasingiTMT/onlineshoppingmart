@@ -32,7 +32,7 @@ Features
 4. Applying Coupon Codes
    Input: UserId, promoCode
    Validations:
-   if we entered wrong userId or entered promo code is invalid, an error message stating "Invalid user Id" / """Invalid promo code" will be returned.
+   if we entered wrong userId or entered promo code is invalid, an error message stating "Invalid user Id" / "Invalid promo code" will be returned.
    Functionality:
    If valid, the coupon will be applied to the total cart cost, providing a discount.
 
