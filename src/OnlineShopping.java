@@ -91,6 +91,8 @@ public class OnlineShopping {
                         }
                         if (response.equals("no")) {
                             System.out.println("Thank you for shopping!");
+                        }else{
+                            System.out.println("Invalid entry, Please try again");
                         }
                         System.exit(0); // Exit the program
                         break;

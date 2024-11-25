@@ -39,6 +39,8 @@ we have some coupon codes in database,based on that we will get discount.
 if we entered wrong input as promo code, we will get error message as invalid promo code
 
 CheckOut of Cart
+In checkout process we have to enter userId, then the items of cart presented cart were goes under checkout process, again there will be promo code applied based on user interest
+later, we will get total cost of items in cart & cart will cleared, later data posted to order history.
 (clearing the Items in cart)
 
 Order History  
@@ -47,7 +49,7 @@ after completion of checkout, the cart will be empty & the data will stored in o
 we can retrive the Order history of user by entering userId
 
 unsaved items - SavedCart
-
+before exit the system, it will ask are you want to save the items in saved cart if yes, the items will save into saved cart & exit,if we enter no it will exit the program immediately.
 
 
 
